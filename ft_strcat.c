@@ -6,7 +6,7 @@
 /*   By: rosanche <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/04 03:09:37 by rosanche          #+#    #+#             */
-/*   Updated: 2017/12/04 03:22:39 by rosanche         ###   ########.fr       */
+/*   Updated: 2017/12/07 21:27:18 by rosanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,16 @@
 
 char	*ft_strcat(unsigned char *dest, unsigned const char *src)
 {
-	int len;
-	int i;
+	size_t len;
+	size_t i;
 
 	i = 0;
-	len = strlen((char *)dest);
+	len = ft_strlen((char *)dest);
 	while (src[i])
 	{
 		dest[len + i] = src[i];
 		i++;
 	}
+	dest[len + 1] = '\0';
 	return ((char *)dest);
 }

@@ -6,7 +6,7 @@
 /*   By: rosanche <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/04 02:44:40 by rosanche          #+#    #+#             */
-/*   Updated: 2017/12/04 03:43:03 by rosanche         ###   ########.fr       */
+/*   Updated: 2017/12/07 21:38:37 by rosanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,13 @@ char	*ft_strcat(unsigned char *dest, unsigned const char *src);
 char	*ft_strchr(const char *s, unsigned char c);
 void	ft_strclr(char *s);
 int		ft_strcmp(const char *s1, const char *s2);
-char	*ft_strcpy(unsigned char *dest, unsigned char *src);
+char	*ft_strcpy(char *dest, const char *src);
 void	ft_strdel(char **as);
 int		ft_strequ(char const *s1, char const *s2);
 void	ft_striter(char *s, void (*f)(char *));
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 char	*ft_strjoin(char const *s1, char const *s2);
-int		ft_strlen(char *str);
+int		ft_strlen(const char *str);
 char	*ft_strmap(char const *s, char (*f)(char));
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	*ft_strncat(unsigned char *dest, unsigned const char *src, size_t n);

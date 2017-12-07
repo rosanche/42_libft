@@ -1,25 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rosanche <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/25 17:39:22 by rosanche          #+#    #+#             */
-/*   Updated: 2017/12/07 21:24:47 by rosanche         ###   ########.fr       */
+/*   Created: 2017/12/07 19:32:10 by rosanche          #+#    #+#             */
+/*   Updated: 2017/12/07 20:06:11 by rosanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char const *s, int fd)
+size_t	strlcat(char *dst, const char *src, size_t size)
 {
-	int i;
+	size_t i;
+	size_t dn;
+	size_t sn;
 
-	i = 0;
-	while (s[i])
-	{
-		ft_putchar_fd(s[i], fd);
-		i++;
-	}
+	dn = ft_strlen(dst);
+	sn = ft_strlen(src);
+	i = -1;
+	if (size < dn)
+		sn += size;
+	else
+		sn += dn;
+	while (src[++i] && size > i + sn + 1)
+		dest[i + dn] = src[i];
+	dst[i + dn] = '\0';
+	return (sn);
 }
+
+//size envoit un certain nombre;
+//trois variables : i pour se promener
