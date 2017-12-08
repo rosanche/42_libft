@@ -6,7 +6,7 @@
 /*   By: rosanche <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/30 15:54:40 by rosanche          #+#    #+#             */
-/*   Updated: 2017/12/04 03:24:34 by rosanche         ###   ########.fr       */
+/*   Updated: 2017/12/08 17:19:13 by rosanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,13 @@
 
 void	ft_strdel(char **as)
 {
-	while (*as)
+	if (as)
 	{
-		free(*as);
-		*as = NULL;
-		as++;
+		while (*as)
+		{
+			free(*as);
+			*as = NULL;
+			as++;
+		}
 	}
 }
