@@ -6,7 +6,7 @@
 /*   By: rosanche <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/07 19:14:02 by rosanche          #+#    #+#             */
-/*   Updated: 2017/12/07 19:14:06 by rosanche         ###   ########.fr       */
+/*   Updated: 2017/12/08 20:59:14 by rosanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,29 +16,32 @@ char	*ft_itoa(int n)
 {
 	char *tab;
 	unsigned int nb;
-	int len;
-	int i;
+	size_t len;
 
-	nb = n;
 	len = 1;
+	nb = n;
+	if (0 > n)
+	{
+		len++;
+		nb = -n;
+	}
 	while (nb >= 10)
 	{
 		nb /= 10;
 		len++;
 	}
-	if (!(tab = (char *)malloc(sizeof(char) * (i + 1))))
+	if (!(tab = (char *)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
-	while (len > 1)
+	nb = n;
+	if (n < 0)
+		nb = -n;
+	while (len > 0)
 	{
-		while (i < len)
-		{
-			nb /= 10;
-			i++;
-		}
-		*tab = nb % 10 + '0';
-		tab++;
-		nb = n;
-		i = 0;
+		tab[len - 1] = nb % 10 + '0';
+		nb /= 10;
 		len--;
 	}
+	if (n < 0)
+		tab[0] = '-';
+	return (tab);
 }
