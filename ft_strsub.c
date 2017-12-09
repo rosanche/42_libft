@@ -6,7 +6,7 @@
 /*   By: rosanche <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/30 16:41:12 by rosanche          #+#    #+#             */
-/*   Updated: 2017/12/08 16:33:03 by rosanche         ###   ########.fr       */
+/*   Updated: 2017/12/09 20:46:05 by rosanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char		*ft_strsub(char const *s, unsigned int start, size_t len)
 {
 	char	*src;
-	size_t		i;
+	size_t	i;
 
 	i = 0;
 	if (!(s))

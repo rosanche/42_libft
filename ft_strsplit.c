@@ -6,13 +6,13 @@
 /*   By: rosanche <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/30 21:09:10 by rosanche          #+#    #+#             */
-/*   Updated: 2017/12/08 21:00:35 by rosanche         ###   ########.fr       */
+/*   Updated: 2017/12/09 20:48:52 by rosanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	count_word(char const *s, int c)
+static	int		count_word(char const *s, int c)
 {
 	int i;
 	int word;
@@ -30,15 +30,15 @@ static int	count_word(char const *s, int c)
 	return (word);
 }
 
-static char	*word_fill(char const *s, int pos, int c)
+static	char	*word_fill(char const *s, int pos, int c)
 {
-	int i;
-	char *src;
+	int		i;
+	char	*src;
 
 	i = pos;
 	while (s[i] != c && s[i])
 		i++;
-	if(!(src = (char *)malloc(sizeof(char) * (i + 1))))
+	if (!(src = (char *)malloc(sizeof(char) * (i + 1))))
 		return (NULL);
 	i = 0;
 	while (s[pos] != c && s[pos])
@@ -51,12 +51,12 @@ static char	*word_fill(char const *s, int pos, int c)
 	return (src);
 }
 
-char	**ft_strsplit(char const *s, int c)
+char			**ft_strsplit(char const *s, int c)
 {
-	int i;
-	int n;
-	int word;
-	char **tab;
+	int		i;
+	int		n;
+	int		word;
+	char	**tab;
 
 	i = 0;
 	word = count_word(s, c);
