@@ -15,6 +15,7 @@ FLAGS = -Wall -Wextra -Werror
 
 FILES = ft_atoi.c \
 		ft_bzero.c \
+		ft_itoa.c \
 		ft_memccpy.c \
 		ft_memchr.c \
 		ft_memcmp.c \
@@ -44,6 +45,7 @@ FILES = ft_atoi.c \
 		ft_memdel.c \
 		ft_strnew.c \
 		ft_strdel.c \
+		ft_strdup.c \
 		ft_strclr.c \
 		ft_striter.c \
 		ft_striteri.c \

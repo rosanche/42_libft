@@ -32,6 +32,7 @@ char	*ft_itoa(int n)
 	}
 	if (!(tab = (char *)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
+	tab[len] = '\0';
 	nb = n;
 	if (n < 0)
 		nb = -n;

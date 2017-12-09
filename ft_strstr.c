@@ -6,7 +6,7 @@
 /*   By: rosanche <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/28 18:40:55 by rosanche          #+#    #+#             */
-/*   Updated: 2017/12/04 03:33:18 by rosanche         ###   ########.fr       */
+/*   Updated: 2017/12/09 20:15:15 by rosanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strstr(const char *meule_de_foin, const char *aiguille)
 	while (meule_de_foin[i] || aiguille[n])
 	{
 		n = 0;
-		if (aiguille[n] == meule_de_foin[i])
+		while (aiguille[n] == meule_de_foin[i])
 		{
 			ptr = &meule_de_foin[i];
 			while (aiguille[n])
@@ -33,8 +33,7 @@ char	*ft_strstr(const char *meule_de_foin, const char *aiguille)
 			if (!(aiguille[n]))
 				return ((char *)ptr);
 		}
-		else
-			i++;
+		i++;
 	}
 	return (NULL);
 }

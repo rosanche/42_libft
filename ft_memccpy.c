@@ -12,7 +12,7 @@
 
 #include <string.h>
 
-void	*ft_memccpy(void *dest, const void *src, const char c, size_t n)
+void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
 	size_t			i;
 	unsigned char	*u_dest;
@@ -21,13 +21,12 @@ void	*ft_memccpy(void *dest, const void *src, const char c, size_t n)
 	u_src = (unsigned char *)src;
 	u_dest = (unsigned char *)dest;
 	i = 0;
-	while (i < n && u_src[i] != c)
+	while (i < n)
 	{
 		u_dest[i] = u_src[i];
+		if (u_dest[i] == (unsigned char)c)
+			return (&(u_dest[i + 1]));
 		i++;
 	}
-	if (u_dest[i] == c)
-		return (&u_dest[i + 1]);
-	else
-		return (NULL);
+	return (NULL);
 }
