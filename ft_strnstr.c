@@ -19,22 +19,18 @@ char	*ft_strnstr(const char *foin, const char *aiguille, size_t len)
 	const char	*ptr;
 
 	i = 0;
-	while ((foin[i] || aiguille[n]) && i < len)
+	while (foin[i] && i < len)
 	{
 		n = 0;
-		if (aiguille[n] == foin[i])
+		while (aiguille[n] == foin[i])
 		{
 			ptr = &foin[i];
-			while (aiguille[n])
-			{
-				i++;
+			while (aiguille[n] && aiguille[n] == foin[i + n])
 				n++;
-			}
 			if (!(aiguille[n]))
 				return ((char *)ptr);
 		}
-		else
-			i++;
+		i++;
 	}
 	return (NULL);
 }

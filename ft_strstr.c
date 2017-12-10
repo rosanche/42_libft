@@ -19,22 +19,18 @@ char	*ft_strstr(const char *meule_de_foin, const char *aiguille)
 	const char	*ptr;
 
 	i = 0;
-	while (meule_de_foin[i] || aiguille[n])
+	while (meule_de_foin[i])
 	{
 		n = 0;
-		if (aiguille[n] == meule_de_foin[i])
+		while (aiguille[n] == meule_de_foin[i])
 		{
 			ptr = &meule_de_foin[i];
-			while (aiguille[n])
-			{
-				i++;
+			while (aiguille[n] && aiguille[n] == meule_de_foin[i + n])
 				n++;
-			}
 			if (!(aiguille[n]))
 				return ((char *)ptr);
 		}
-		else
-			i++;
+		i++;
 	}
 	return (NULL);
 }
