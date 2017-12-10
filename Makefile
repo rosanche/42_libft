@@ -6,16 +6,16 @@
 #    By: rosanche <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/24 14:15:51 by rosanche          #+#    #+#              #
-#    Updated: 2017/11/24 15:37:42 by rosanche         ###   ########.fr        #
+#    Updated: 2017/12/08 21:05:41 by rosanche         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-INC = -I includes/
 NAME = libft.a
 FLAGS = -Wall -Wextra -Werror
 
 FILES = ft_atoi.c \
 		ft_bzero.c \
+		ft_itoa.c \
 		ft_memccpy.c \
 		ft_memchr.c \
 		ft_memcmp.c \
@@ -45,6 +45,7 @@ FILES = ft_atoi.c \
 		ft_memdel.c \
 		ft_strnew.c \
 		ft_strdel.c \
+		ft_strdup.c \
 		ft_strclr.c \
 		ft_striter.c \
 		ft_striteri.c \
@@ -69,7 +70,7 @@ FILES = ft_atoi.c \
 O_FILES = $(FILES:.c=.o)
 
 $(NAME) :
-	gcc $(FLAGS) -c $(FILES) $(INC)
+	gcc $(FLAGS) -c $(FILES)
 	ar rc $(NAME) $(O_FILES)
 	ranlib $(NAME)
 

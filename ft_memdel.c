@@ -6,7 +6,7 @@
 /*   By: rosanche <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/30 15:31:21 by rosanche          #+#    #+#             */
-/*   Updated: 2017/11/30 15:59:40 by rosanche         ###   ########.fr       */
+/*   Updated: 2017/12/08 17:05:48 by rosanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,12 @@
 
 void	ft_memdel(void **ap)
 {
-	while (*ap)
+	if (ap)
 	{
-		free(*ap);
-		*ap = NULL;
-		ap++;
+		while (*ap)
+		{
+			free(*ap);
+			*ap = NULL;
+		}
 	}
 }

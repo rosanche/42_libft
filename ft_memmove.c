@@ -6,7 +6,7 @@
 /*   By: rosanche <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/04 03:39:20 by rosanche          #+#    #+#             */
-/*   Updated: 2017/12/04 03:39:24 by rosanche         ###   ########.fr       */
+/*   Updated: 2017/12/09 21:11:20 by rosanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,21 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	void *temp;
+	void	*temp;
+	size_t	i;
 
-	memcpy(temp, src, n);
-	memcpy(dest, temp, n);
+	temp = NULL;
+	i = 0;
+	while (i < n)
+	{
+		((char *)temp)[i] = ((char *)src)[i];
+		i++;
+	}
+	i = 0;
+	while (i < n)
+	{
+		((char *)dest)[i] = ((char *)temp)[i];
+		i++;
+	}
 	return (dest);
 }

@@ -6,7 +6,7 @@
 /*   By: rosanche <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/30 15:41:24 by rosanche          #+#    #+#             */
-/*   Updated: 2017/12/04 03:34:43 by rosanche         ###   ########.fr       */
+/*   Updated: 2017/12/08 16:23:44 by rosanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strnew(size_t size)
 	size_t	i;
 
 	i = 0;
-	if (!(src = (char *)malloc(sizeof(size_t) * size)))
+	if (!(src = (char *)malloc(sizeof(char) * (size + 1))))
 		return (NULL);
 	while (i < size)
 	{
