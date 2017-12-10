@@ -6,6 +6,7 @@ char	*ft_itoa(int n)
 	unsigned int nb;
 	int len;
 	int i;
+	int k;
 
 	nb = n;
 	len = 1;
@@ -14,19 +15,32 @@ char	*ft_itoa(int n)
 		nb /= 10;
 		len++;
 	}
-	if (!(tab = (char *)malloc(sizeof(char) * (i + 1))))
+	printf("%d", len);
+	if (!(tab = (char *)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
-	while (len > 1)
+	i = 0;
+	k = 0;
+	nb = n;
+	printf("%d", nb);
+	while (n > 0)
 	{
-		while (i < len)
+		while (nb >= 10)
 		{
 			nb /= 10;
 			i++;
 		}
-		*tab = nb % 10 + '0';
-		tab++;
+		tab[k] = nb % 10 + '0';
+		k++;
+		n /= 10;
 		nb = n;
 		i = 0;
 		len--;
 	}
+	tab[k] = '\0';
+	return (tab);
+}
+
+int	main()
+{
+	printf("%s", ft_itoa(1000));
 }
