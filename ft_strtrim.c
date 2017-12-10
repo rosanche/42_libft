@@ -21,6 +21,8 @@ char	*ft_strtrim(char const *s)
 
 	i = 0;
 	v = 0;
+	if (!s)
+		return (NULL);
 	while (s[i])
 		i++;
 	while (s[v] == ' ' || s[v] == '\n' || s[v] == '\t')
