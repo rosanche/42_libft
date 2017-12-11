@@ -19,6 +19,8 @@ char	*ft_strstr(const char *meule_de_foin, const char *aiguille)
 	const char	*ptr;
 
 	i = 0;
+	if (!aiguille[0])
+		return ((char *)meule_de_foin);
 	while (meule_de_foin[i])
 	{
 		n = 0;

@@ -30,7 +30,9 @@ char	*ft_strtrim(char const *s)
 	i--;
 	while (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
 		i--;
-	if (!(src = (char *)malloc(sizeof(char) * (i - v + 1))))
+	if (i == 0)
+		return ("\0");
+	if (!(src = (char *)malloc(sizeof(char) * (i - v))))
 		return (NULL);
 	n = 0;
 	while (v <= i)

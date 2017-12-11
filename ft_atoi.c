@@ -16,10 +16,12 @@ int	ft_atoi(const char *nptr)
 {
 	int n;
 	int i;
-	int res;
+	unsigned int res;
 
 	i = 0;
 	n = 1;
+	if (!nptr)
+		return (0);
 	while (nptr[i] <= 32 && nptr[i] > 1)
 		i++;
 	if (nptr[i] == '-')
