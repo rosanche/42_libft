@@ -16,7 +16,7 @@ char	*ft_strnstr(const char *foin, const char *aiguille, size_t len)
 {
 	size_t		i;
 	size_t		n;
-	char		*ptr;
+	const char		*ptr;
 
 	i = 0;
 	while (foin[i] && i < len)
@@ -24,18 +24,11 @@ char	*ft_strnstr(const char *foin, const char *aiguille, size_t len)
 		n = 0;
 		while (aiguille[n] == foin[i])
 		{
-<<<<<<< HEAD
 			ptr = &foin[i];
 			while (aiguille[n] && aiguille[n] == foin[i + n])
-=======
-			ptr = (char *)&foin[i];
-			while (aiguille[n])
-			{
-				i++;
->>>>>>> 7135655e3ea47981033926a62d57a7918a021271
 				n++;
 			if (!(aiguille[n]))
-				return (ptr);
+				return ((char *)ptr);
 		}
 		i++;
 	}
