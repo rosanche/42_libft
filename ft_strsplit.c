@@ -6,7 +6,7 @@
 /*   By: rosanche <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/30 21:09:10 by rosanche          #+#    #+#             */
-/*   Updated: 2017/12/09 20:48:52 by rosanche         ###   ########.fr       */
+/*   Updated: 2017/12/11 21:05:24 by rosanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,8 @@ char			**ft_strsplit(char const *s, int c)
 	char	**tab;
 
 	i = 0;
+	if (!s)
+		return (NULL);
 	word = count_word(s, c);
 	if (!(tab = (char **)malloc(sizeof(char *) * (word + 1))))
 		return (NULL);

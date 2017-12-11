@@ -6,29 +6,32 @@
 /*   By: rosanche <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/04 03:39:20 by rosanche          #+#    #+#             */
-/*   Updated: 2017/12/09 21:11:20 by rosanche         ###   ########.fr       */
+/*   Updated: 2017/12/11 20:55:14 by rosanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+static int	dest_overlap(void *dest, void *src, size_t n)
 {
-	void	*temp;
-	size_t	i;
+		return (src + n > dest && src + n <= dest + n);
+}
 
-	temp = NULL;
-	i = 0;
-	while (i < n)
+void	*ft_memmove(void *dest, void *src, size_t n)
+{
+	int	i;
+
+	if (dest_overlap(dest, src, n))
 	{
-		((char *)temp)[i] = ((char *)src)[i];
-		i++;
+		i = n;
+		while (--i >= 0)
+			((unsigned char*)dest)[i] = ((unsigned char*)src)[i];
 	}
-	i = 0;
-	while (i < n)
+	else
 	{
-		((char *)dest)[i] = ((char *)temp)[i];
-		i++;
+		i = -1;
+		while (++i < (int)n)
+			((unsigned char*)dest)[i] = ((unsigned char*)src)[i];
 	}
 	return (dest);
 }

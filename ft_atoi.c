@@ -6,7 +6,7 @@
 /*   By: rosanche <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/19 19:30:42 by rosanche          #+#    #+#             */
-/*   Updated: 2017/12/09 19:58:06 by rosanche         ###   ########.fr       */
+/*   Updated: 2017/12/11 21:00:33 by rosanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_atoi(const char *nptr)
 	n = 1;
 	if (!nptr)
 		return (0);
-	while (nptr[i] <= 32 && nptr[i] > 1)
+	while (nptr[i] <= 32 && nptr[i] > 1 && nptr[i] != 27)
 		i++;
 	if (nptr[i] == '-')
 	{
@@ -30,7 +30,7 @@ int	ft_atoi(const char *nptr)
 		i++;
 	}
 	res = 0;
-	while (nptr[i])
+	while (nptr[i] && nptr[i] >= '0' && nptr[i] <= '9')
 	{
 		res = res * 10 + nptr[i] - '0';
 		i++;
