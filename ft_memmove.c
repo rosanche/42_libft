@@ -6,7 +6,7 @@
 /*   By: rosanche <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/04 03:39:20 by rosanche          #+#    #+#             */
-/*   Updated: 2017/12/11 20:55:14 by rosanche         ###   ########.fr       */
+/*   Updated: 2017/12/20 08:22:47 by rosanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 static int	dest_overlap(void *dest, void *src, size_t n)
 {
-		return (src + n > dest && src + n <= dest + n);
+	return (src + n > dest && src + n <= dest + n);
 }
 
-void	*ft_memmove(void *dest, void *src, size_t n)
+void		*ft_memmove(void *dest, void *src, size_t n)
 {
 	int	i;
 

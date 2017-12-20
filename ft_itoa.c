@@ -6,7 +6,7 @@
 /*   By: rosanche <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/07 19:14:02 by rosanche          #+#    #+#             */
-/*   Updated: 2017/12/09 21:04:53 by rosanche         ###   ########.fr       */
+/*   Updated: 2017/12/20 08:19:42 by rosanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,6 @@ char			*ft_itoa(int n)
 	}
 	if (!(tab = (char *)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
-	tab = fill(tab, nb, len, n);;
+	tab = fill(tab, nb, len, n);
 	return (tab);
 }
