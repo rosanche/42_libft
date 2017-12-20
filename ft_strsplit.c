@@ -6,7 +6,7 @@
 /*   By: rosanche <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/30 21:09:10 by rosanche          #+#    #+#             */
-/*   Updated: 2017/12/11 21:05:24 by rosanche         ###   ########.fr       */
+/*   Updated: 2017/12/20 11:31:28 by rosanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,13 @@ static	int		count_word(char const *s, int c)
 	int word;
 
 	i = 0;
-	word = -1;
+	word = 0;
 	while (s[i] != '\0')
 	{
 		while (s[i] == c)
 			i++;
-		word++;
+		if (s[i])
+			word++;
 		while (s[i] != c && s[i])
 			i++;
 	}

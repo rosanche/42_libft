@@ -6,7 +6,7 @@
 /*   By: rosanche <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/30 19:29:44 by rosanche          #+#    #+#             */
-/*   Updated: 2017/12/07 21:23:58 by rosanche         ###   ########.fr       */
+/*   Updated: 2017/12/20 09:54:35 by rosanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_putnbr_fd(int n, int fd)
 	nb = n;
 	if (n < 0)
 	{
-		ft_putchar('-');
+		ft_putchar_fd('-', fd);
 		nb = -n;
 	}
 	if (nb >= 10)
