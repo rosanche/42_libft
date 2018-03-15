@@ -6,7 +6,7 @@
 #    By: rosanche <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/24 14:15:51 by rosanche          #+#    #+#              #
-#    Updated: 2017/12/08 21:05:41 by rosanche         ###   ########.fr        #
+#    Updated: 2018/03/15 16:42:35 by rosanche         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,6 +66,12 @@ FILES = ft_atoi.c \
 		ft_putstr_fd.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c \
+		ft_lstadd.c \
+		ft_lstdel.c \
+		ft_lstdelone.c \
+		ft_lstiter.c \
+		ft_lstmap.c \
+		ft_lstnew.c \
 
 O_FILES = $(FILES:.c=.o)
 

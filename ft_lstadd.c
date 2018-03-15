@@ -6,7 +6,7 @@
 /*   By: rosanche <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/10 19:18:13 by rosanche          #+#    #+#             */
-/*   Updated: 2018/03/15 16:14:24 by rosanche         ###   ########.fr       */
+/*   Updated: 2018/03/15 17:45:37 by rosanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstadd(t_list **alst, t_list *new_node)
 {
-	if (*alst)
+	if (alst)
 	{
 		new_node->next = *alst;
 		*alst = new_node;
