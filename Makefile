@@ -13,7 +13,9 @@
 NAME = libft.a
 FLAGS = -Wall -Wextra -Werror
 
-FILES = ft_atoi.c \
+INCLUDES = includes/
+
+SRCS = ft_atoi.c \
 		ft_bzero.c \
 		ft_itoa.c \
 		ft_memccpy.c \
@@ -53,7 +55,7 @@ FILES = ft_atoi.c \
 		ft_strmapi.c \
 		ft_strequ.c \
 		ft_strnequ.c \
-		ft_strsub.c \
+		ft_substr.c \
 		ft_strjoin.c \
 		ft_strtrim.c \
 		ft_strsplit.c \
@@ -66,17 +68,14 @@ FILES = ft_atoi.c \
 		ft_putstr_fd.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c \
-		ft_lstadd.c \
-		ft_lstdel.c \
-		ft_lstdelone.c \
-		ft_lstiter.c \
-		ft_lstmap.c \
-		ft_lstnew.c \
+		ft_calloc.c \
+		ft_strlcpy.c \
 
-O_FILES = $(FILES:.c=.o)
+
+O_FILES = $(SRCS:.c=.o)
 
 $(NAME) :
-	gcc $(FLAGS) -c $(FILES)
+	gcc $(FLAGS) -I $(INCLUDES) -c $(SRCS)
 	ar rc $(NAME) $(O_FILES)
 	ranlib $(NAME)
 

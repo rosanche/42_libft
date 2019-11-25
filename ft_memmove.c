@@ -21,6 +21,8 @@ void		*ft_memmove(void *dest, void *src, size_t n)
 {
 	int	i;
 
+	if (!(dest || src))
+		return NULL;	
 	if (dest_overlap(dest, src, n))
 	{
 		i = n;
