@@ -20,6 +20,8 @@ char		*ft_substr(char const *s, unsigned int start, size_t len)
 	i = 0;
 	if (!(s))
 		return (NULL);
+	if ((unsigned int)start > (unsigned int)ft_strlen(s))
+		return (ft_strdup(""));
 	if (!(src = (char *)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
 	while (i < len)

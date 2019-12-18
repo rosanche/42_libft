@@ -6,14 +6,13 @@
 #    By: rosanche <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/24 14:15:51 by rosanche          #+#    #+#              #
-#    Updated: 2018/03/15 16:42:35 by rosanche         ###   ########.fr        #
+#    Updated: 2019/12/18 15:33:06 by rosanche         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
+INCLUDE = libft.h
 FLAGS = -Wall -Wextra -Werror
-
-INCLUDES = includes/
 
 SRCS = ft_atoi.c \
 		ft_bzero.c \
@@ -58,7 +57,7 @@ SRCS = ft_atoi.c \
 		ft_substr.c \
 		ft_strjoin.c \
 		ft_strtrim.c \
-		ft_strsplit.c \
+		ft_split.c \
 		ft_itoa.c \
 		ft_putchar.c \
 		ft_putstr.c \
@@ -70,12 +69,13 @@ SRCS = ft_atoi.c \
 		ft_putnbr_fd.c \
 		ft_calloc.c \
 		ft_strlcpy.c \
+		get_next_line.c \
 
 
 O_FILES = $(SRCS:.c=.o)
 
-$(NAME) :
-	gcc $(FLAGS) -I $(INCLUDES) -c $(SRCS)
+$(NAME) : $(SRCS) $(INCLUDE)
+	gcc $(FLAGS)  -c $(SRCS)
 	ar rc $(NAME) $(O_FILES)
 	ranlib $(NAME)
 

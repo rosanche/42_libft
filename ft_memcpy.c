@@ -6,7 +6,7 @@
 /*   By: rosanche <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/23 19:26:23 by rosanche          #+#    #+#             */
-/*   Updated: 2017/12/07 20:53:28 by rosanche         ###   ########.fr       */
+/*   Updated: 2019/11/25 18:36:55 by rosanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 
 	i = 0;
 	if (!(dest || src))
-		return NULL;
+		return (NULL);
 	while (i < n)
 	{
 		((unsigned char *)dest)[i] = ((unsigned char *)src)[i];

@@ -6,13 +6,13 @@
 /*   By: rosanche <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/07 19:08:13 by rosanche          #+#    #+#             */
-/*   Updated: 2017/12/08 17:51:23 by rosanche         ###   ########.fr       */
+/*   Updated: 2019/11/27 12:45:52 by rosanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(char *str)
+char	*ft_strdup(const char *str)
 {
 	int		i;
 	char	*src;
